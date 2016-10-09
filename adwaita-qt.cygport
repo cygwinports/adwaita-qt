@@ -1,7 +1,7 @@
 inherit qt4-cmake qt5
 
 NAME="adwaita-qt"
-VERSION=0.4
+VERSION=0.5
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Adwaita theme for Qt"
