@@ -1,7 +1,7 @@
 inherit qt4-cmake qt5
 
 NAME="adwaita-qt"
-VERSION=0.5
+VERSION=1.0
 RELEASE=1
 CATEGORY="X11"
 SUMMARY="Adwaita theme for Qt"
@@ -9,6 +9,7 @@ DESCRIPTION="A native style to bend Qt4 and Qt5 applications to look like they
 belong into the GNOME desktop."
 HOMEPAGE="https://github.com/MartinBriza/adwaita-qt"
 SRC_URI="${HOMEPAGE}/archive/${VERSION}/adwaita-qt-${VERSION}.tar.gz"
+PATCH_URI="1.0-ftm.patch"
 
 PKG_NAMES="${NAME}4 ${NAME}5 ${NAME}-common"
 
@@ -18,7 +19,7 @@ adwaita_qt4_CONTENTS="${QT4_PLUGINSDIR#/}/styles/adwaita.dll"
 adwaita_qt5_REQUIRES="${NAME}-common adwaita-icon-theme cantarell-fonts"
 adwaita_qt5_SUMMARY="${SUMMARY}5"
 adwaita_qt5_CONTENTS="${QT5_PLUGINSDIR#/}/styles/adwaita.dll"
-adwaita_qt_common_CONTENTS="usr/share/doc/adwaita-qt/ usr/share/themes/Adwaita/qt/"
+adwaita_qt_common_CONTENTS="usr/share/doc/adwaita-qt/"
 
 src_compile() {
 	mkdir -p ${B}/qt{4,5}
